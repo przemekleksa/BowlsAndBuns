@@ -1,0 +1,87 @@
+$font-main: 'Poppins', sans-serif;
+
+$font-size-xxs: 10px;
+$font-size-xs: 12px;
+$font-size-s: 14px;
+$font-size-m: 16px;
+$font-size-l: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 30px;
+
+%text-base {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 300;
+}
+
+%header-base {
+  @extend %text-base;
+  font-weight: 500;
+}
+
+%h1 {
+  @extend %header-base;
+  font-size: $font-size-xxl;
+  line-height: 42px;
+}
+
+%h2 {
+  @extend %header-base;
+  font-size: $font-size-xl;
+  line-height: 32px;
+}
+
+%h3 {
+  @extend %header-base;
+  font-size: $font-size-l;
+  line-height: 24px;
+}
+
+%h4 {
+  @extend %header-base;
+  font-size: $font-size-s;
+  line-height: 18px;
+}
+
+%title-card {
+  @extend %header-base;
+  font-weight: 900;
+  font-size: $font-size-m;
+  line-height: 20px;
+}
+
+%title-product {
+  @extend %text-base;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+%title-product-bold {
+  @extend %title-product;
+  font-weight: bold;
+}
+
+%text-b1 {
+  @extend %text-base;
+  font-size: $font-size-m;
+  line-height: 24px;
+}
+
+%text-b2 {
+  @extend %text-base;
+  font-size: $font-size-s;
+  line-height: 20px;
+}
+
+%text-b3 {
+  @extend %text-base;
+  font-size: $font-size-xs;
+  line-height: 16px;
+}
+
+%text-b4 {
+  @extend %text-base;
+  font-size: $font-size-xxs;
+  line-height: 14px;
+}

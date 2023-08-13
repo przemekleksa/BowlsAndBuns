@@ -1,0 +1,226 @@
+@use 'variables';
+@use 'rwd';
+@use 'fonts';
+@use 'typography';
+@use 'colors';
+
+$footer-height: 176px;
+$topbar-height: 107px;
+
+$shadow-small:
+  0 0 3px 0 rgba(50, 55, 63, 0.12),
+  0 0 1px 0 rgba(48, 49, 51, 0.07);
+$border-line: 1px solid rgba(colors.$brand-teal, 0.2);
+
+.screen {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.aboveFold {
+  min-height: 100vh;
+}
+
+.container {
+  width: 1140px;
+
+  @include rwd.for-tablet() {
+    width: 720px;
+  }
+
+  @include rwd.for-mobile() {
+    width: calc(100vw - 40px);
+  }
+}
+
+.content-container {
+  width: 850px;
+
+  @include rwd.for-tablet() {
+    width: 720px;
+  }
+
+  @include rwd.for-mobile() {
+    width: calc(100vw - 40px);
+  }
+}
+
+.card {
+  background-color: variables.$white;
+  border-radius: variables.$border-radius-xs;
+  overflow: hidden;
+}
+
+.rect-background {
+  position: absolute;
+  z-index: -1;
+  top: -40px;
+  left: -80px;
+  width: 540px;
+  height: 272px;
+  border-radius: variables.$border-radius-xs;
+  background-color: variables.$gray-medium;
+
+  @include rwd.for-rtl() {
+    right: -80px;
+    left: auto;
+  }
+}
+
+.font-fix {
+  display: inline-block;
+  -moz-transform: translateY(0.15em);
+}
+
+.elipsis-multiline {
+  overflow: hidden;
+  position: relative;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: white;
+  }
+}
+
+.simple-link {
+  @extend %font-medium;
+  font-weight: 500;
+  color: variables.$blue-gray-dark;
+}
+
+.imgResponsive {
+  max-width: 100%;
+}
+
+.centerWithAbsolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+// MAKE FOOTER STAY ON THE BOTTOM
+// Add page-wrapper and main-content classes to the page
+.page-wrapper {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  min-height: calc(100vh - #{$footer-height} - #{$topbar-height});
+  align-items: center;
+}
+
+.main-content {
+  @extend .container;
+  flex: 1 1;
+}
+
+%list-element {
+  @extend %font-small;
+  margin: variables.$margin-xsmall 0;
+}
+// ------------
+
+// CARDS WRAPPING
+%cards-container {
+  padding-top: variables.$padding-xl;
+  display: grid;
+  gap: variables.$padding-m;
+  grid-template-columns: 1fr;
+
+  @include rwd.for-desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include rwd.for-tablet() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+%card-item {
+  flex: 1;
+  margin: calc(variables.$margin-small / 2);
+
+  @include rwd.for-desktop {
+    max-width: calc(33% - #{variables.$margin-small});
+  }
+  @include rwd.for-tablet() {
+    max-width: calc(50% - #{variables.$margin-small});
+  }
+}
+
+%card-border {
+  $border-width: 2px;
+
+  position: relative;
+  border: $border-width solid variables.$gray-lighter;
+  padding: variables.$margin-small;
+  box-sizing: border-box;
+  @extend %font-medium;
+  font-weight: bold;
+  margin-bottom: variables.$margin-xsmall;
+
+  @include rwd.for-sizes('tablet', 'desktop') {
+    width: calc(100% / 3 - #{variables.$margin-xsmall});
+    margin-right: variables.$margin-xsmall;
+  }
+}
+
+%noMarginCollapse {
+  padding: 0.05px;
+}
+
+%truncatedText {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+%smallSpinner {
+  height: 9px;
+  width: 9px;
+  transform: translateY(1px);
+
+  & > div {
+    border-width: 2px !important;
+  }
+}
+
+%inputGroups {
+  display: flex;
+  flex-direction: column;
+  gap: variables.$padding-xl;
+
+  .item {
+    margin: 0;
+  }
+}
+
+%roundedBox {
+  @extend %text-b2;
+  display: flex;
+  flex-direction: column;
+  gap: variables.$padding-m;
+  background-color: colors.$brand-white;
+  border-radius: variables.$border-radius-m;
+  padding: variables.$padding-xxl variables.$padding-m variables.$padding-xl;
+  color: colors.$brand-rich-black;
+}

@@ -1,0 +1,97 @@
+// COLORS
+$white: #fff;
+$white-dark: #f5f5f5;
+$black: #000;
+$black-light: #212121;
+$gray-lighter: #dddddd;
+$gray-light: #c3c3c3;
+$gray: #939393;
+$gray-light: #a5a5a5;
+$gray-medium: #6e6e6e;
+$gray-dark: #535353;
+$blue: #3077f2;
+$blue-dark: #355bea;
+$blue-gray: #8fafc3;
+$blue-gray-light: #d4dce5;
+$blue-gray-medium: #5888a5;
+$blue-gray-dark: #206187;
+$blue-green-dark: #1c6269;
+$blue-green-light: #5cc77d;
+$blue-cloudy: #d4dce5;
+$green-gray: #adbab2;
+$green-gray-medium: #627c6b;
+$pink: #ef7e7d;
+$red: #c31b1b;
+$beige: #b87d2f;
+$beige-light: #e6d3ba;
+$transparent: transparent;
+$light-teal: #1f93a0;
+$red-sauce: #ff5959;
+// Sections background colors
+$playlists: #939393;
+$restaurants: #56849f;
+$suggestions: #adbab2;
+
+// Animations
+$animation-time: 200ms;
+
+// Margins THIS IS OLD - dont use this anymore
+$margin-huge: 100px;
+$margin-xxlarge: 60px;
+$margin-xlarge: 50px;
+$margin-large: 40px;
+$margin-medium: 30px;
+$margin-small: 20px;
+$margin-xsmall: 10px;
+$margin-tiny: 5px;
+
+// Paddings
+$padding-xxxl: 40px;
+$padding-xxl: 32px;
+$padding-xl: 24px;
+$padding-l: 20px;
+$padding-m: 16px;
+$padding-s: 12px;
+$padding-xs: 8px;
+$padding-xxs: 4px;
+
+// Breakpoints
+$size-tablet-min: 768px;
+$size-desktop-min: 1240px;
+
+// BORDER-RADIUS
+$border-radius-small: 2px; // old
+
+$border-radius-xs: 8px;
+$border-radius-s: 12px;
+$border-radius-m: 16px;
+$border-radius-l: 20px;
+$border-radius-xl: 24px;
+$border-radius-xxl: 28px;
+
+// MARGINS SECTIONS
+$margin-between-sections-desktop: $padding-xxxl;
+$margin-between-sections-mobile: $padding-l;
+$margin-between-sections-small: $padding-xxxl;
+
+// Z_INDEXES
+$z-index-version-mismatch: 999999;
+$z-index-toast: 150; //toast should be over modals
+$z-index-modal-button: 130; //button should be over maps
+$z-index-action-modal: 120;
+$z-index-action-modal-backdrop: 140;
+$z-index-above-modals: 99;
+$z-index-promo-codes-carousel-spinner-wrapper: 10;
+
+$z-index-explore-all-dishes-menu-sticky: 5; // sticky categories menu on explore page
+$z-index-top-bar-sticky: 4;
+$z-index-top-bar-container: 3;
+$z-index-top-bar-menu-desktop: 3;
+$z-index-search-modal: 3;
+
+$z-index-google-maps-search-box: 3;
+$z-index-scroll-to-top-button: 3;
+$z-index-top-bar-basket-backdrop: 3;
+$z-index-order-details-basket-button: 3;
+
+$z-index-top-bar-menu-mobile: 2;

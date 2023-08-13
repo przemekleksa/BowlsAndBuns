@@ -1,0 +1,45 @@
+@use 'variables';
+
+$mobile-container-width: 335px;
+
+@mixin for-mobile {
+  @media (max-width: (variables.$size-tablet-min - 1)) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (min-width: variables.$size-tablet-min) and (max-width: (variables.$size-desktop-min - 1)) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (min-width: variables.$size-desktop-min) {
+    @content;
+  }
+}
+
+@mixin for-sizes($sizes...) {
+  @each $element in $sizes {
+    @if $element == 'mobile' {
+      @include for-mobile() {
+        @content;
+      }
+    } @else if $element == 'tablet' {
+      @include for-tablet() {
+        @content;
+      }
+    } @else if $element == 'desktop' {
+      @include for-desktop {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin for-rtl {
+  [dir='rtl'] & {
+    @content;
+  }
+}
